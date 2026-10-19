@@ -7,3 +7,23 @@ public class Pet {
     private String especie;
     private Cliente cliente;
 
+
+    public Pet(int codigo, String nome, String especie, Cliente cliente) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.especie = especie;
+        this.cliente = cliente;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+    
