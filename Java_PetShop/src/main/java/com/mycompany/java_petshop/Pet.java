@@ -27,3 +27,14 @@ public class Pet {
         return cliente;
     }
     
+public boolean trocarResponsavel(Cliente novoCliente) {
+        if (novoCliente == null) {
+            return false;
+        }
+        if (cliente.getCodigo() == novoCliente.getCodigo()) {
+            return false;
+        }
+        cliente = novoCliente;
+        return true;
+    }
+
