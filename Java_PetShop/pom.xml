@@ -10,4 +10,5 @@
         <maven.compiler.release>26</maven.compiler.release>
         <exec.mainClass>com.mycompany.java_petshop.Java_PetShop</exec.mainClass>
     </properties>
+    <name>PetShopMRF</name>
 </project>
