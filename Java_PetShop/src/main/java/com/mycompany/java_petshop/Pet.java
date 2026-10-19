@@ -38,3 +38,10 @@ public boolean trocarResponsavel(Cliente novoCliente) {
         return true;
     }
 
+
+    public void exibirDados() {
+        System.out.println(codigo + " | " + nome + " | Especie: " + especie
+                + " | Responsavel: " + cliente.getNome());
+    }
+}
+
