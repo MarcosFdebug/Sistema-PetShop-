@@ -1,4 +1,4 @@
-package petshop;
+package com.mycompany.java_petshop
 
 public class Atendimento {
     private int codigo;
