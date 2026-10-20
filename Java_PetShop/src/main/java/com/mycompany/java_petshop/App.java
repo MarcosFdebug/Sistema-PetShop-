@@ -37,11 +37,23 @@ public class App {
                     atualizarTelefone();
                     break;
 
+                case 4:
+                    cadastrarPet();
+                    break;
+
+                case 5:
+                    listarPets();
+                    break;
+
+                case 6:
+                    trocarResponsavel();
+                    break;
+
                 case 0:
                     break;
 
                 default:
-                    System.out.println("Opcao invalida. Escolha de 0 a 3.");
+                    System.out.println("Opcao invalida. Escolha de 0 a 6.");
             }
 
         } while (opcao != 0);
@@ -55,6 +67,9 @@ public class App {
         System.out.println("1 - Cadastrar cliente");
         System.out.println("2 - Listar clientes");
         System.out.println("3 - Atualizar telefone do cliente");
+        System.out.println("4 - Cadastrar pet");
+        System.out.println("5 - Listar pets");
+        System.out.println("6 - Trocar responsavel pelo pet");
         System.out.println("0 - Sair");
     }
 
@@ -143,8 +158,7 @@ public class App {
         }
     }
 
-
- private void cadastrarPet() {
+    private void cadastrarPet() {
         if (clientes.size() == 0) {
             System.out.println("Cadastre um cliente antes de cadastrar um pet.");
             return;
