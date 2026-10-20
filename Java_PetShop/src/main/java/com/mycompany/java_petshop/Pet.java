@@ -19,8 +19,8 @@ public class Pet {
         return codigo;
     }
     
-    public int getEspecie() {
-        return codigo;
+    public String getEspecie() {
+        return especie;
     }
 
     public String getNome() {
