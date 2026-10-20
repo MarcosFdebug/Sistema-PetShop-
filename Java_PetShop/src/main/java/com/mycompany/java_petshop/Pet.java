@@ -18,6 +18,10 @@ public class Pet {
     public int getCodigo() {
         return codigo;
     }
+    
+    public String getEspecie() {
+        return especie;
+    }
 
     public String getNome() {
         return nome;

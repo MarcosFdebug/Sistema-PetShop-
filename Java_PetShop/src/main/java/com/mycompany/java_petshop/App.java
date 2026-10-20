@@ -49,11 +49,23 @@ public class App {
                     trocarResponsavel();
                     break;
 
+                case 7:
+                    registrarAtendimento();
+                    break;
+
+                case 8:
+                    listarAtendimentos();
+                    break;
+
+                case 9:
+                    concluirAtendimento();
+                    break;
+
                 case 0:
                     break;
 
                 default:
-                    System.out.println("Opcao invalida. Escolha de 0 a 6.");
+                    System.out.println("Opcao invalida. Escolha de 0 a 9.");
             }
 
         } while (opcao != 0);
@@ -70,6 +82,9 @@ public class App {
         System.out.println("4 - Cadastrar pet");
         System.out.println("5 - Listar pets");
         System.out.println("6 - Trocar responsavel pelo pet");
+        System.out.println("7 - Registrar atendimento");
+        System.out.println("8 - Listar atendimentos");
+        System.out.println("9 - Concluir atendimento");
         System.out.println("0 - Sair");
     }
 
@@ -226,6 +241,77 @@ public class App {
             System.out.println("Responsavel atualizado.");
         } else {
             System.out.println("Esse cliente ja e o responsavel pelo pet.");
+        }
+    }
+
+    private void registrarAtendimento() {
+        if (pets.size() == 0) {
+            System.out.println("Cadastre um pet antes de registrar um atendimento.");
+            return;
+        }
+        listarPets();
+        int codigoPet = lerInteiro("Codigo do pet: ");
+        Pet pet = buscarPet(codigoPet);
+        if (pet == null) {
+            System.out.println("Pet nao encontrado. Atendimento nao registrado.");
+            return;
+        }
+        System.out.println("1 - Banho");
+        System.out.println("2 - Tosa");
+        int opcaoServico = lerInteiro("Escolha o servico: ");
+        String servico;
+        if (opcaoServico == 1) {
+            servico = "Banho";
+        } else if (opcaoServico == 2) {
+            servico = "Tosa";
+        } else {
+            System.out.println("Servico invalido. Atendimento nao registrado.");
+            return;
+        }
+        int valorCentavos = lerInteiro("Valor em centavos (5000 = R$ 50,00): ");
+        if (valorCentavos <= 0) {
+            System.out.println("O valor deve ser maior que zero. Atendimento nao registrado.");
+            return;
+        }
+        Atendimento atendimento = new Atendimento(atendimentos.size() + 1,
+                pet, servico, valorCentavos);
+        atendimentos.add(atendimento);
+        System.out.println("Atendimento registrado. Codigo: " + atendimento.getCodigo());
+    }
+
+    private void listarAtendimentos() {
+        if (atendimentos.size() == 0) {
+            System.out.println("Nenhum atendimento registrado.");
+        } else {
+            for (Atendimento atendimento : atendimentos) {
+                atendimento.exibirDados();
+            }
+        }
+    }
+
+    private Atendimento buscarAtendimento(int codigo) {
+        for (Atendimento atendimento : atendimentos) {
+            if (atendimento.getCodigo() == codigo) {
+                return atendimento;
+            }
+        }
+        return null;
+    }
+
+    private void concluirAtendimento() {
+        if (atendimentos.size() == 0) {
+            System.out.println("Registre um atendimento primeiro.");
+            return;
+        }
+        listarAtendimentos();
+        int codigo = lerInteiro("Codigo do atendimento: ");
+        Atendimento atendimento = buscarAtendimento(codigo);
+        if (atendimento == null) {
+            System.out.println("Atendimento nao encontrado.");
+        } else if (atendimento.concluir()) {
+            System.out.println("Atendimento concluido.");
+        } else {
+            System.out.println("Esse atendimento ja foi concluido.");
         }
     }
 }
