@@ -143,8 +143,7 @@ public class App {
         }
     }
 
-
- private void cadastrarPet() {
+    private void cadastrarPet() {
         if (clientes.size() == 0) {
             System.out.println("Cadastre um cliente antes de cadastrar um pet.");
             return;
@@ -214,4 +213,28 @@ public class App {
             System.out.println("Esse cliente ja e o responsavel pelo pet.");
         }
     }
-}
+
+    private void registrarAtendimento() {
+        if (pets.size() == 0) {
+            System.out.println("Cadastre um pet antes de registrar um atendimento.");
+            return;
+        }
+        listarPets();
+        int codigoPet = lerInteiro("Codigo do pet: ");
+        Pet pet = buscarPet(codigoPet);
+        if (pet == null) {
+            System.out.println("Pet nao encontrado. Atendimento nao registrado.");
+            return;
+        }
+        System.out.println("1 - Banho");
+        System.out.println("2 - Tosa");
+        int opcaoServico = lerInteiro("Escolha o servico: ");
+        String servico;
+        if (opcaoServico == 1) {
+            servico = "Banho";
+        } else if (opcaoServico == 2) {
+            servico = "Tosa";
+        } else {
+            System.out.println("Servico invalido. Atendimento nao registrado.");
+            return;
+        }
