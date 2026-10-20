@@ -69,6 +69,6 @@ O sistema utiliza classes para representar clientes, pets e atendimentos. Os cad
 
 ## Divisão do trabalho
 
-- **Fernando:** classe `Cliente.java`, estrutura principal de `App.java` e funcionalidades de clientes.
-- **Cords:** classe `Pet.java` e funcionalidades de pets no `App.java`.
-- **Marcos:** classe `Atendimento.java` e funcionalidades de atendimentos no `App.java`.
+- **Fernando D.:** classe `Cliente.java`, estrutura principal de `App.java` e funcionalidades de clientes.
+- **Rafael C.:** classe `Pet.java` e funcionalidades de pets no `App.java`.
+- **Marcos S.:** classe `Atendimento.java` e funcionalidades de atendimentos no `App.java`.
