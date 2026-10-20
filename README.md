@@ -1,6 +1,6 @@
 # Sistema PetShop
 
-Projeto acadêmico desenvolvido em Java**, com execução pelo terminal, para gerenciar clientes, pets e atendimentos de um pet shop.
+Projeto acadêmico desenvolvido em Java, com execução pelo terminal, para gerenciar clientes, pets e atendimentos de um pet shop.
 
 ## Funcionalidades
 
