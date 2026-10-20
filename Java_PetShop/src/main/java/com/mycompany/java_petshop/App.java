@@ -259,3 +259,17 @@ public class App {
         }
     }
 
+    private Atendimento buscarAtendimento(int codigo) {
+        for (Atendimento atendimento : atendimentos) {
+            if (atendimento.getCodigo() == codigo) {
+                return atendimento;
+            }
+        }
+        return null;
+    }
+
+    private void concluirAtendimento() {
+        if (atendimentos.size() == 0) {
+            System.out.println("Registre um atendimento primeiro.");
+            return;
+        }
