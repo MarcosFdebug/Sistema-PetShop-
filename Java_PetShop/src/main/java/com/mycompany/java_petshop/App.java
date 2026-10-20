@@ -238,3 +238,24 @@ public class App {
             System.out.println("Servico invalido. Atendimento nao registrado.");
             return;
         }
+        int valorCentavos = lerInteiro("Valor em centavos (5000 = R$ 50,00): ");
+        if (valorCentavos <= 0) {
+            System.out.println("O valor deve ser maior que zero. Atendimento nao registrado.");
+            return;
+        }
+        Atendimento atendimento = new Atendimento(atendimentos.size() + 1,
+                pet, servico, valorCentavos);
+        atendimentos.add(atendimento);
+        System.out.println("Atendimento registrado. Codigo: " + atendimento.getCodigo());
+    }
+
+    private void listarAtendimentos() {
+        if (atendimentos.size() == 0) {
+            System.out.println("Nenhum atendimento registrado.");
+        } else {
+            for (Atendimento atendimento : atendimentos) {
+                atendimento.exibirDados();
+            }
+        }
+    }
+
