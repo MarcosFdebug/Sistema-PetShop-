@@ -273,3 +273,15 @@ public class App {
             System.out.println("Registre um atendimento primeiro.");
             return;
         }
+    listarAtendimentos();
+        int codigo = lerInteiro("Codigo do atendimento: ");
+        Atendimento atendimento = buscarAtendimento(codigo);
+        if (atendimento == null) {
+            System.out.println("Atendimento nao encontrado.");
+        } else if (atendimento.concluir()) {
+            System.out.println("Atendimento concluido.");
+        } else {
+            System.out.println("Esse atendimento ja foi concluido.");
+        }
+    }
+}
